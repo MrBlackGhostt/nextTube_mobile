@@ -6,7 +6,6 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Link } from "expo-router";
 
 const Navbar = () => {
-  console.log("navbar");
   return (
     <View className=" flex-row w-full h-auto justify-between bg-slate-800 rounded-lg">
       <Image

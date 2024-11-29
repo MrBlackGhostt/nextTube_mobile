@@ -6,12 +6,12 @@ import Tags from "@/components/tags";
 
 const SearchBar = () => {
   return (
-    <View className="flex-1 px-5 pt-3 bg-black">
+    <View className="flex-2 gap-4 px-5 pt-3 bg-black" style={styles.container}>
       {/* Search Bar */}
 
-      <View className="" style={styles.searchSection}>
+      <View className="w-full " style={styles.searchSection}>
         <TextInput
-          className="rounded-s-lg"
+          className="rounded-md"
           style={styles.input}
           placeholder="Search!"
           onChangeText={(newText) => {
@@ -29,9 +29,11 @@ const SearchBar = () => {
           color="gray"
         />
       </View>
-
-      {/*  Tag for better search */}
-      <Tags />
+      <View style={styles.tagSection}>
+       {/* Tag for better search */}
+      <Tags scroll={false}/> 
+{/* Passing the true as form index the scroll value is not passing so need to reverse it for now */}
+      </View>
     </View>
   );
 };
@@ -39,19 +41,23 @@ const SearchBar = () => {
 export default SearchBar;
 
 const styles = StyleSheet.create({
+  container: {
+    flex:3,
+    justifyContent:'flex-start',
+  },
   searchSection: {
-    flex: 1,
     width: "100%",
-    height: "100%",
+    height:40,
     flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: "black",
+    // backgroundColor: "blue",
   },
   searchIcon: {
     paddingLeft: 7,
+    width:'15%'
   },
   input: {
-    flex: 1,
+    width:'85%',
     height: 40,
     borderRadius: 30,
     paddingTop: 10,
@@ -61,13 +67,8 @@ const styles = StyleSheet.create({
     backgroundColor: "gray",
     color: "black",
   },
-  container: {
-    flexDirection: "row",
-    backgroundColor: "red",
-  },
-  image: {
-    height: 40,
-    paddingLeft: 0,
-    backgroundColor: "red",
-  },
+ 
+  tagSection:{
+    flex: 3,
+  }
 });

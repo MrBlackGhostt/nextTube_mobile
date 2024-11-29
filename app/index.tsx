@@ -1,13 +1,32 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import "../global.css";
 import Navbar from "@/components/navbar";
+import Tags from "@/components/tags";
+import LocalData from "@/components/localData";
 export default function App() {
   return (
-    <View className="flex-1 bg-gray-600">
+    <View className="flex-1 bg-slate-900">
       <Navbar />
+      <View>
+      <Tags scroll={true}/>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false} alwaysBounceVertical={true}>
+      <View className="gap-5 bg-slate-900">
+
+      <LocalData/>
+      <LocalData/>
+      <LocalData/>
+      <LocalData/>
+      <LocalData/>
+      <LocalData/>
+      <LocalData/>
+      <LocalData/>
+      <LocalData/>
+      </View>
+      </ScrollView>
     </View>
   );
 }
