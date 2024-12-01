@@ -7,9 +7,14 @@ export interface Thumbnail {
 
 // Type for video item
 export interface VideoItem {
-    id: string; // Video ID
-    title: string; // Video title
-    thumbnail: Thumbnail; // Video thumbnail (high-resolution preferred)
+    id: string | undefined; // Video ID
+    title: string | undefined; // Video title
+    thumbnail: Thumbnail | undefined; // Video thumbnail (high-resolution preferred)
+}
+
+export interface VideoClick{
+    id: string | undefined
+    title: string | undefined
 }
 
 export interface YouTubeAPIResponse {

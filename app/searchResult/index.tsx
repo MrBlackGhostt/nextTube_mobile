@@ -14,7 +14,7 @@ import {
   useNavigation,
 } from '@react-navigation/native';
 
-const LocalData = () => {
+const SearchResultComponent = () => {
   const navigation = useNavigation()
   const { width } = useWindowDimensions(); //Give the widht and height of the current screen
   const dispatch = useAppDispatch();
@@ -939,16 +939,16 @@ const LocalData = () => {
     // .catch((error) => console.error("Error fetching data:", error));
   }, []);
   return (
-    <View className="flex-2 gap-3 px-4 h-[300]  rounded-lg bg-slate-600">
+    <View className="flex-1 gap-3 px-4   rounded-lg bg-slate-600">
       <View>
         <Text className="text-2xl font-extrabold">Last Watch</Text>
       </View>
-      <ScrollView horizontal={true}>
-        <View className="gap-5" style={{ flexWrap: "wrap" }}>
+      <ScrollView >
+        <View className="gap-5" >
           {posts.map((post) => (
             <Pressable className="px-1" key={post.id + `${Math.random() * 1000}`} onPress={()=> {
               console.log("Click the video",{id: post.id})
-              dispatch(videoClick({id: post.id, title:post.snippet.title}))
+              dispatch(videoClick({id: post.id, title: post.title}))
               navigation.navigate('video')
               }}>
 
@@ -988,4 +988,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LocalData;
+export default SearchResultComponent;

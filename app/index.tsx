@@ -12,6 +12,7 @@ import LocalData from "@/components/localData";
 import { Provider } from 'react-redux'
 import { store } from "./store";
 import PostsList from "./PostsList";
+import { Link } from "expo-router";
 
 export default function App() {
   return (
@@ -26,7 +27,8 @@ export default function App() {
       {/* <PostsList/> */}
       {/* {/* <LocalData/> */}
       <LocalData/>
-      <LocalData/>
+      
+      {/* <LocalData/> */}
       {/* <LocalData/>
       <LocalData/>
       <LocalData/>

@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import postsReducer from '@/features/posts/postSlice'
 import firstVideoReduce from "@/features/posts/initialVideos"
+import videoClickReduce from "@/features/currentVideo"
 
 
 export const store = configureStore({
@@ -9,7 +10,8 @@ export const store = configureStore({
       reducer: {
         // Declare that `state.counter` will be updated by the `counterReducer` function
         posts: postsReducer,
-        firstVideo: firstVideoReduce
+        firstVideo: firstVideoReduce,
+        videoClick: videoClickReduce
       }
     })
 
